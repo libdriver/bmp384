@@ -316,96 +316,96 @@ typedef struct bmp384_info_s
 
 /**
  * @brief     initialize bmp384_handle_t structure
- * @param[in] HANDLE points to a bmp384 handle structure
- * @param[in] STRUCTURE is bmp384_handle_t
+ * @param[in] HANDLE pointer to a bmp384 handle structure
+ * @param[in] STRUCTURE bmp384_handle_t
  * @note      none
  */
 #define DRIVER_BMP384_LINK_INIT(HANDLE, STRUCTURE)        memset(HANDLE, 0, sizeof(STRUCTURE))
 
 /**
  * @brief     link iic_init function
- * @param[in] HANDLE points to a bmp384 handle structure
- * @param[in] FUC points to an iic_init function address
+ * @param[in] HANDLE pointer to a bmp384 handle structure
+ * @param[in] FUC pointer to an iic_init function address
  * @note      none
  */
 #define DRIVER_BMP384_LINK_IIC_INIT(HANDLE, FUC)         (HANDLE)->iic_init = FUC
 
 /**
  * @brief     link iic_deinit function
- * @param[in] HANDLE points to a bmp384 handle structure
- * @param[in] FUC points to an iic_deinit function address
+ * @param[in] HANDLE pointer to a bmp384 handle structure
+ * @param[in] FUC pointer to an iic_deinit function address
  * @note      none
  */
 #define DRIVER_BMP384_LINK_IIC_DEINIT(HANDLE, FUC)       (HANDLE)->iic_deinit = FUC
 
 /**
  * @brief     link iic_read function
- * @param[in] HANDLE points to a bmp384 handle structure
- * @param[in] FUC points to an iic_read function address
+ * @param[in] HANDLE pointer to a bmp384 handle structure
+ * @param[in] FUC pointer to an iic_read function address
  * @note      none
  */
 #define DRIVER_BMP384_LINK_IIC_READ(HANDLE, FUC)         (HANDLE)->iic_read = FUC
 
 /**
  * @brief     link iic_write function
- * @param[in] HANDLE points to a bmp384 handle structure
- * @param[in] FUC points to an iic_write function address
+ * @param[in] HANDLE pointer to a bmp384 handle structure
+ * @param[in] FUC pointer to an iic_write function address
  * @note      none
  */
 #define DRIVER_BMP384_LINK_IIC_WRITE(HANDLE, FUC)        (HANDLE)->iic_write = FUC
 
 /**
  * @brief     link spi_init function
- * @param[in] HANDLE points to a bmp384 handle structure
- * @param[in] FUC points to a spi_init function address
+ * @param[in] HANDLE pointer to a bmp384 handle structure
+ * @param[in] FUC pointer to a spi_init function address
  * @note      none
  */
 #define DRIVER_BMP384_LINK_SPI_INIT(HANDLE, FUC)         (HANDLE)->spi_init = FUC
 
 /**
  * @brief     link spi_deinit function
- * @param[in] HANDLE points to a bmp384 handle structure
- * @param[in] FUC points to a spi_deinit function address
+ * @param[in] HANDLE pointer to a bmp384 handle structure
+ * @param[in] FUC pointer to a spi_deinit function address
  * @note      none
  */
 #define DRIVER_BMP384_LINK_SPI_DEINIT(HANDLE, FUC)       (HANDLE)->spi_deinit = FUC
 
 /**
  * @brief     link spi_read function
- * @param[in] HANDLE points to a bmp384 handle structure
- * @param[in] FUC points to a spi_read function address
+ * @param[in] HANDLE pointer to a bmp384 handle structure
+ * @param[in] FUC pointer to a spi_read function address
  * @note      none
  */
 #define DRIVER_BMP384_LINK_SPI_READ(HANDLE, FUC)         (HANDLE)->spi_read = FUC
 
 /**
  * @brief     link spi_write function
- * @param[in] HANDLE points to a bmp384 handle structure
- * @param[in] FUC points to a spi_write function address
+ * @param[in] HANDLE pointer to a bmp384 handle structure
+ * @param[in] FUC pointer to a spi_write function address
  * @note      none
  */
 #define DRIVER_BMP384_LINK_SPI_WRITE(HANDLE, FUC)        (HANDLE)->spi_write = FUC
 
 /**
  * @brief     link delay_ms function
- * @param[in] HANDLE points to a bmp384 handle structure
- * @param[in] FUC points to a delay_ms function address
+ * @param[in] HANDLE pointer to a bmp384 handle structure
+ * @param[in] FUC pointer to a delay_ms function address
  * @note      none
  */
 #define DRIVER_BMP384_LINK_DELAY_MS(HANDLE, FUC)         (HANDLE)->delay_ms = FUC
 
 /**
  * @brief     link debug_print function
- * @param[in] HANDLE points to a bmp384 handle structure
- * @param[in] FUC points to a debug_print function address
+ * @param[in] HANDLE pointer to a bmp384 handle structure
+ * @param[in] FUC pointer to a debug_print function address
  * @note      none
  */
 #define DRIVER_BMP384_LINK_DEBUG_PRINT(HANDLE, FUC)      (HANDLE)->debug_print = FUC
 
 /**
  * @brief     link receive_callback function
- * @param[in] HANDLE points to a bmp384 handle structure
- * @param[in] FUC points to a receive_callback function address
+ * @param[in] HANDLE pointer to a bmp384 handle structure
+ * @param[in] FUC pointer to a receive_callback function address
  * @note      none
  */
 #define DRIVER_BMP384_LINK_RECEIVE_CALLBACK(HANDLE, FUC) (HANDLE)->receive_callback = FUC
@@ -423,7 +423,7 @@ typedef struct bmp384_info_s
 
 /**
  * @brief      get chip's information
- * @param[out] *info points to a bmp384 info structure
+ * @param[out] *info pointer to a bmp384 info structure
  * @return     status code
  *             - 0 success
  *             - 2 handle is NULL
@@ -433,8 +433,8 @@ uint8_t bmp384_info(bmp384_info_t *info);
 
 /**
  * @brief     set the iic address pin
- * @param[in] *handle points to a bmp384 handle structure
- * @param[in] addr_pin is the iic address pin
+ * @param[in] *handle pointer to a bmp384 handle structure
+ * @param[in] addr_pin iic address pin
  * @return    status code
  *            - 0 success
  *            - 2 handle is NULL
@@ -444,8 +444,8 @@ uint8_t bmp384_set_addr_pin(bmp384_handle_t *handle, bmp384_address_t addr_pin);
 
 /**
  * @brief      get the iic address pin
- * @param[in]  *handle points to a bmp384 handle structure
- * @param[out] *addr_pin points to an iic address pin buffer
+ * @param[in]  *handle pointer to a bmp384 handle structure
+ * @param[out] *addr_pin pointer to an iic address pin buffer
  * @return     status code
  *             - 0 success
  *             - 2 handle is NULL
@@ -455,8 +455,8 @@ uint8_t bmp384_get_addr_pin(bmp384_handle_t *handle, bmp384_address_t *addr_pin)
 
 /**
  * @brief     set the interface
- * @param[in] *handle points to a bmp384 handle structure
- * @param[in] interface is the chip interface
+ * @param[in] *handle pointer to a bmp384 handle structure
+ * @param[in] interface chip interface
  * @return    status code
  *            - 0 success
  *            - 2 handle is NULL
@@ -466,8 +466,8 @@ uint8_t bmp384_set_interface(bmp384_handle_t *handle, bmp384_interface_t interfa
 
 /**
  * @brief      get the interface
- * @param[in]  *handle points to a bmp384 handle structure
- * @param[out] *interface points to a chip interface buffer
+ * @param[in]  *handle pointer to a bmp384 handle structure
+ * @param[out] *interface pointer to a chip interface buffer
  * @return     status code
  *             - 0 success
  *             - 2 handle is NULL
@@ -477,7 +477,7 @@ uint8_t bmp384_get_interface(bmp384_handle_t *handle, bmp384_interface_t *interf
 
 /**
  * @brief     irq handler
- * @param[in] *handle points to a bmp384 handle structure
+ * @param[in] *handle pointer to a bmp384 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 run failed
@@ -489,7 +489,7 @@ uint8_t bmp384_irq_handler(bmp384_handle_t *handle);
 
 /**
  * @brief     initialize the chip
- * @param[in] *handle points to a bmp384 handle structure
+ * @param[in] *handle pointer to a bmp384 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 iic or spi initialization failed
@@ -504,7 +504,7 @@ uint8_t bmp384_init(bmp384_handle_t *handle);
 
 /**
  * @brief     close the chip
- * @param[in] *handle points to a bmp384 handle structure
+ * @param[in] *handle pointer to a bmp384 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 iic or spi deinit failed
@@ -517,11 +517,11 @@ uint8_t bmp384_deinit(bmp384_handle_t *handle);
 
 /**
  * @brief      read the temperature and pressure
- * @param[in]  *handle points to a bmp384 handle structure
- * @param[out] *temperature_raw points to a raw temperature buffer
- * @param[out] *temperature_c points to a converted temperature buffer
- * @param[out] *pressure_raw points to a raw pressure buffer
- * @param[out] *pressure_pa points to a converted pressure buffer
+ * @param[in]  *handle pointer to a bmp384 handle structure
+ * @param[out] *temperature_raw pointer to a raw temperature buffer
+ * @param[out] *temperature_c pointer to a converted temperature buffer
+ * @param[out] *pressure_raw pointer to a raw pressure buffer
+ * @param[out] *pressure_pa pointer to a converted pressure buffer
  * @return     status code
  *             - 0 success
  *             - 1 read temperature pressure failed
@@ -534,9 +534,9 @@ uint8_t bmp384_read_temperature_pressure(bmp384_handle_t *handle, uint32_t *temp
 
 /**
  * @brief      read the temperature
- * @param[in]  *handle points to a bmp384 handle structure
- * @param[out] *raw points to a raw temperature buffer
- * @param[out] *c points to a converted temperature buffer
+ * @param[in]  *handle pointer to a bmp384 handle structure
+ * @param[out] *raw pointer to a raw temperature buffer
+ * @param[out] *c pointer to a converted temperature buffer
  * @return     status code
  *             - 0 success
  *             - 1 read temperature failed
@@ -548,9 +548,9 @@ uint8_t bmp384_read_temperature(bmp384_handle_t *handle, uint32_t *raw, float *c
 
 /**
  * @brief      read the pressure
- * @param[in]  *handle points to a bmp384 handle structure
- * @param[out] *raw points to a raw pressure buffer
- * @param[out] *pa points to a converted pressure buffer
+ * @param[in]  *handle pointer to a bmp384 handle structure
+ * @param[out] *raw pointer to a raw pressure buffer
+ * @param[out] *pa pointer to a converted pressure buffer
  * @return     status code
  *             - 0 success
  *             - 1 read pressure failed
@@ -562,8 +562,8 @@ uint8_t bmp384_read_pressure(bmp384_handle_t *handle, uint32_t *raw, float *pa);
 
 /**
  * @brief      get the error
- * @param[in]  *handle points to a bmp384 handle structure
- * @param[out] *err points to an error buffer
+ * @param[in]  *handle pointer to a bmp384 handle structure
+ * @param[out] *err pointer to an error buffer
  * @return     status code
  *             - 0 success
  *             - 1 get error failed
@@ -575,8 +575,8 @@ uint8_t bmp384_get_error(bmp384_handle_t *handle, uint8_t *err);
 
 /**
  * @brief      get the status
- * @param[in]  *handle points to a bmp384 handle structure
- * @param[out] *status points to a status buffer
+ * @param[in]  *handle pointer to a bmp384 handle structure
+ * @param[out] *status pointer to a status buffer
  * @return     status code
  *             - 0 success
  *             - 1 get status failed
@@ -588,8 +588,8 @@ uint8_t bmp384_get_status(bmp384_handle_t *handle, uint8_t *status);
 
 /**
  * @brief      get the sensor time
- * @param[in]  *handle points to a bmp384 handle structure
- * @param[out] *t points to a timestamp buffer
+ * @param[in]  *handle pointer to a bmp384 handle structure
+ * @param[out] *t pointer to a timestamp buffer
  * @return     status code
  *             - 0 success
  *             - 1 get sensor time failed
@@ -601,8 +601,8 @@ uint8_t bmp384_get_sensortime(bmp384_handle_t *handle, uint32_t *t);
 
 /**
  * @brief      get the event
- * @param[in]  *handle points to a bmp384 handle structure
- * @param[out] *event points to an event buffer
+ * @param[in]  *handle pointer to a bmp384 handle structure
+ * @param[out] *event pointer to an event buffer
  * @return     status code
  *             - 0 success
  *             - 1 get event failed
@@ -614,8 +614,8 @@ uint8_t bmp384_get_event(bmp384_handle_t *handle, bmp384_event_t *event);
 
 /**
  * @brief     set the spi wire
- * @param[in] *handle points to a bmp384 handle structure
- * @param[in] wire is the spi wire
+ * @param[in] *handle pointer to a bmp384 handle structure
+ * @param[in] wire spi wire
  * @return    status code
  *            - 0 success
  *            - 1 set spi wire failed
@@ -627,8 +627,8 @@ uint8_t bmp384_set_spi_wire(bmp384_handle_t *handle, bmp384_spi_wire_t wire);
 
 /**
  * @brief      get the spi wire
- * @param[in]  *handle points to a bmp384 handle structure
- * @param[out] *wire points to a spi wire buffer
+ * @param[in]  *handle pointer to a bmp384 handle structure
+ * @param[out] *wire pointer to a spi wire buffer
  * @return     status code
  *             - 0 success
  *             - 1 get spi wire failed
@@ -640,8 +640,8 @@ uint8_t bmp384_get_spi_wire(bmp384_handle_t *handle, bmp384_spi_wire_t *wire);
 
 /**
  * @brief     enable or disable the iic watchdog timer
- * @param[in] *handle points to a bmp384 handle structure
- * @param[in] enable is a bool value
+ * @param[in] *handle pointer to a bmp384 handle structure
+ * @param[in] enable bool value
  * @return    status code
  *            - 0 success
  *            - 1 set iic watchdog timer failed
@@ -653,8 +653,8 @@ uint8_t bmp384_set_iic_watchdog_timer(bmp384_handle_t *handle, bmp384_bool_t ena
 
 /**
  * @brief      get the iic watchdog timer status
- * @param[in]  *handle points to a bmp384 handle structure
- * @param[out] *enable points to a bool buffer
+ * @param[in]  *handle pointer to a bmp384 handle structure
+ * @param[out] *enable pointer to a bool buffer
  * @return     status code
  *             - 0 success
  *             - 1 get iic watchdog timer failed
@@ -666,8 +666,8 @@ uint8_t bmp384_get_iic_watchdog_timer(bmp384_handle_t *handle, bmp384_bool_t *en
 
 /**
  * @brief     set the iic watchdog period
- * @param[in] *handle points to a bmp384 handle structure
- * @param[in] period is the iic watchdog period
+ * @param[in] *handle pointer to a bmp384 handle structure
+ * @param[in] period iic watchdog period
  * @return    status code
  *            - 0 success
  *            - 1 set iic watchdog period failed
@@ -679,8 +679,8 @@ uint8_t bmp384_set_iic_watchdog_period(bmp384_handle_t *handle, bmp384_iic_watch
 
 /**
  * @brief      get the iic watchdog period
- * @param[in]  *handle points to a bmp384 handle structure
- * @param[out] *period points to an iic watchdog period buffer
+ * @param[in]  *handle pointer to a bmp384 handle structure
+ * @param[out] *period pointer to an iic watchdog period buffer
  * @return     status code
  *             - 0 success
  *             - 1 get iic watchdog period failed
@@ -692,8 +692,8 @@ uint8_t bmp384_get_iic_watchdog_period(bmp384_handle_t *handle, bmp384_iic_watch
 
 /**
  * @brief     enable or disable the pressure
- * @param[in] *handle points to a bmp384 handle structure
- * @param[in] enable is a bool value
+ * @param[in] *handle pointer to a bmp384 handle structure
+ * @param[in] enable bool value
  * @return    status code
  *            - 0 success
  *            - 1 set pressure failed
@@ -705,8 +705,8 @@ uint8_t bmp384_set_pressure(bmp384_handle_t *handle, bmp384_bool_t enable);
 
 /**
  * @brief      get the pressure status
- * @param[in]  *handle points to a bmp384 handle structure
- * @param[out] *enable points to a bool buffer
+ * @param[in]  *handle pointer to a bmp384 handle structure
+ * @param[out] *enable pointer to a bool buffer
  * @return     status code
  *             - 0 success
  *             - 1 get pressure failed
@@ -718,8 +718,8 @@ uint8_t bmp384_get_pressure(bmp384_handle_t *handle, bmp384_bool_t *enable);
 
 /**
  * @brief     enable or disable the temperature
- * @param[in] *handle points to a bmp384 handle structure
- * @param[in] enable is a bool value
+ * @param[in] *handle pointer to a bmp384 handle structure
+ * @param[in] enable bool value
  * @return    status code
  *            - 0 success
  *            - 1 set temperature failed
@@ -731,8 +731,8 @@ uint8_t bmp384_set_temperature(bmp384_handle_t *handle, bmp384_bool_t enable);
 
 /**
  * @brief      get the temperature status
- * @param[in]  *handle points to a bmp384 handle structure
- * @param[out] *enable points to a bool buffer
+ * @param[in]  *handle pointer to a bmp384 handle structure
+ * @param[out] *enable pointer to a bool buffer
  * @return     status code
  *             - 0 success
  *             - 1 get temperature failed
@@ -744,8 +744,8 @@ uint8_t bmp384_get_temperature(bmp384_handle_t *handle, bmp384_bool_t *enable);
 
 /**
  * @brief     set the chip mode
- * @param[in] *handle points to a bmp384 handle structure
- * @param[in] mode is the chip mode
+ * @param[in] *handle pointer to a bmp384 handle structure
+ * @param[in] mode chip mode
  * @return    status code
  *            - 0 success
  *            - 1 set mode failed
@@ -757,8 +757,8 @@ uint8_t bmp384_set_mode(bmp384_handle_t *handle, bmp384_mode_t mode);
 
 /**
  * @brief      get the chip mode
- * @param[in]  *handle points to a bmp384 handle structure
- * @param[out] *mode points to a mode buffer
+ * @param[in]  *handle pointer to a bmp384 handle structure
+ * @param[out] *mode pointer to a mode buffer
  * @return     status code
  *             - 0 success
  *             - 1 get mode failed
@@ -770,8 +770,8 @@ uint8_t bmp384_get_mode(bmp384_handle_t *handle, bmp384_mode_t *mode);
 
 /**
  * @brief     set the pressure oversampling
- * @param[in] *handle points to a bmp384 handle structure
- * @param[in] oversampling is the pressure oversampling
+ * @param[in] *handle pointer to a bmp384 handle structure
+ * @param[in] oversampling pressure oversampling
  * @return    status code
  *            - 0 success
  *            - 1 set pressure oversampling failed
@@ -783,8 +783,8 @@ uint8_t bmp384_set_pressure_oversampling(bmp384_handle_t *handle, bmp384_oversam
 
 /**
  * @brief      get the pressure oversampling
- * @param[in]  *handle points to a bmp384 handle structure
- * @param[out] *oversampling points to an oversampling buffer
+ * @param[in]  *handle pointer to a bmp384 handle structure
+ * @param[out] *oversampling pointer to an oversampling buffer
  * @return     status code
  *             - 0 success
  *             - 1 get pressure oversampling failed
@@ -796,8 +796,8 @@ uint8_t bmp384_get_pressure_oversampling(bmp384_handle_t *handle, bmp384_oversam
 
 /**
  * @brief     set the temperature oversampling
- * @param[in] *handle points to a bmp384 handle structure
- * @param[in] oversampling is the temperature oversampling
+ * @param[in] *handle pointer to a bmp384 handle structure
+ * @param[in] oversampling temperature oversampling
  * @return    status code
  *            - 0 success
  *            - 1 set temperature oversampling failed
@@ -809,8 +809,8 @@ uint8_t bmp384_set_temperature_oversampling(bmp384_handle_t *handle, bmp384_over
 
 /**
  * @brief      get the temperature oversampling
- * @param[in]  *handle points to a bmp384 handle structure
- * @param[out] *oversampling points to an oversampling buffer
+ * @param[in]  *handle pointer to a bmp384 handle structure
+ * @param[out] *oversampling pointer to an oversampling buffer
  * @return     status code
  *             - 0 success
  *             - 1 get temperature oversampling failed
@@ -822,8 +822,8 @@ uint8_t bmp384_get_temperature_oversampling(bmp384_handle_t *handle, bmp384_over
 
 /**
  * @brief     set the output data rate
- * @param[in] *handle points to a bmp384 handle structure
- * @param[in] odr is the output data rate
+ * @param[in] *handle pointer to a bmp384 handle structure
+ * @param[in] odr output data rate
  * @return    status code
  *            - 0 success
  *            - 1 set odr failed
@@ -835,8 +835,8 @@ uint8_t bmp384_set_odr(bmp384_handle_t *handle, bmp384_odr_t odr);
 
 /**
  * @brief      get the output data rate
- * @param[in]  *handle points to a bmp384 handle structure
- * @param[out] *odr points to an output data rate buffer
+ * @param[in]  *handle pointer to a bmp384 handle structure
+ * @param[out] *odr pointer to an output data rate buffer
  * @return     status code
  *             - 0 success
  *             - 1 get odr failed
@@ -848,8 +848,8 @@ uint8_t bmp384_get_odr(bmp384_handle_t *handle, bmp384_odr_t *odr);
 
 /**
  * @brief     set the filter coefficient
- * @param[in] *handle points to a bmp384 handle structure
- * @param[in] coefficient is the filter coefficient
+ * @param[in] *handle pointer to a bmp384 handle structure
+ * @param[in] coefficient filter coefficient
  * @return    status code
  *            - 0 success
  *            - 1 set filter coefficient failed
@@ -861,8 +861,8 @@ uint8_t bmp384_set_filter_coefficient(bmp384_handle_t *handle, bmp384_filter_coe
 
 /**
  * @brief      get the filter coefficient
- * @param[in]  *handle points to a bmp384 handle structure
- * @param[out] *coefficient points to a filter coefficient buffer
+ * @param[in]  *handle pointer to a bmp384 handle structure
+ * @param[out] *coefficient pointer to a filter coefficient buffer
  * @return     status code
  *             - 0 success
  *             - 1 get filter coefficient failed
@@ -874,7 +874,7 @@ uint8_t bmp384_get_filter_coefficient(bmp384_handle_t *handle, bmp384_filter_coe
 
 /**
  * @brief     soft reset
- * @param[in] *handle points to a bmp384 handle structure
+ * @param[in] *handle pointer to a bmp384 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 soft reset failed
@@ -886,7 +886,7 @@ uint8_t bmp384_softreset(bmp384_handle_t *handle);
 
 /**
  * @brief     extmode enable middle
- * @param[in] *handle points to a bmp384 handle structure
+ * @param[in] *handle pointer to a bmp384 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 extmode enable middle failed
@@ -909,8 +909,8 @@ uint8_t bmp384_extmode_en_middle(bmp384_handle_t *handle);
 
 /**
  * @brief      get the interrupt status
- * @param[in]  *handle points to a bmp384 handle structure
- * @param[out] *status points to a status buffer
+ * @param[in]  *handle pointer to a bmp384 handle structure
+ * @param[out] *status pointer to a status buffer
  * @return     status code
  *             - 0 success
  *             - 1 get interrupt status failed
@@ -922,8 +922,8 @@ uint8_t bmp384_get_interrupt_status(bmp384_handle_t *handle, uint8_t *status);
 
 /**
  * @brief     set the interrupt pin type
- * @param[in] *handle points to a bmp384 handle structure
- * @param[in] pin_type is the interrupt pin type
+ * @param[in] *handle pointer to a bmp384 handle structure
+ * @param[in] pin_type interrupt pin type
  * @return    status code
  *            - 0 success
  *            - 1 set interrupt pin type failed
@@ -935,8 +935,8 @@ uint8_t bmp384_set_interrupt_pin_type(bmp384_handle_t *handle, bmp384_interrupt_
 
 /**
  * @brief      get the interrupt pin type
- * @param[in]  *handle points to a bmp384 handle structure
- * @param[out] *pin_type points to an interrupt pin type buffer
+ * @param[in]  *handle pointer to a bmp384 handle structure
+ * @param[out] *pin_type pointer to an interrupt pin type buffer
  * @return     status code
  *             - 0 success
  *             - 1 get interrupt pin type failed
@@ -948,8 +948,8 @@ uint8_t bmp384_get_interrupt_pin_type(bmp384_handle_t *handle, bmp384_interrupt_
 
 /**
  * @brief     set the interrupt active level
- * @param[in] *handle points to a bmp384 handle structure
- * @param[in] level is the interrupt active level
+ * @param[in] *handle pointer to a bmp384 handle structure
+ * @param[in] level interrupt active level
  * @return    status code
  *            - 0 success
  *            - 1 set interrupt active level failed
@@ -961,8 +961,8 @@ uint8_t bmp384_set_interrupt_active_level(bmp384_handle_t *handle, bmp384_interr
 
 /**
  * @brief      get the interrupt active level
- * @param[in]  *handle points to a bmp384 handle structure
- * @param[out] *level points to an interrupt active level buffer
+ * @param[in]  *handle pointer to a bmp384 handle structure
+ * @param[out] *level pointer to an interrupt active level buffer
  * @return     status code
  *             - 0 success
  *             - 1 get interrupt active level failed
@@ -974,8 +974,8 @@ uint8_t bmp384_get_interrupt_active_level(bmp384_handle_t *handle, bmp384_interr
 
 /**
  * @brief     enable or disable latching interrupt pin and interrupt status
- * @param[in] *handle points to a bmp384 handle structure
- * @param[in] enable is a bool value
+ * @param[in] *handle pointer to a bmp384 handle structure
+ * @param[in] enable bool value
  * @return    status code
  *            - 0 success
  *            - 1 set latch interrupt pin and interrupt status failed
@@ -987,8 +987,8 @@ uint8_t bmp384_set_latch_interrupt_pin_and_interrupt_status(bmp384_handle_t *han
 
 /**
  * @brief      get latching interrupt pin and interrupt status
- * @param[in]  *handle points to a bmp384 handle structure
- * @param[out] *enable points to a bool buffer
+ * @param[in]  *handle pointer to a bmp384 handle structure
+ * @param[out] *enable pointer to a bool buffer
  * @return     status code
  *             - 0 success
  *             - 1 get latch interrupt pin and interrupt status failed
@@ -1000,8 +1000,8 @@ uint8_t bmp384_get_latch_interrupt_pin_and_interrupt_status(bmp384_handle_t *han
 
 /**
  * @brief     enable or disable the fifo watermark interrupt
- * @param[in] *handle points to a bmp384 handle structure
- * @param[in] enable is a bool value
+ * @param[in] *handle pointer to a bmp384 handle structure
+ * @param[in] enable bool value
  * @return    status code
  *            - 0 success
  *            - 1 set interrupt fifo watermark failed
@@ -1013,8 +1013,8 @@ uint8_t bmp384_set_interrupt_fifo_watermark(bmp384_handle_t *handle, bmp384_bool
 
 /**
  * @brief      get the interrupt fifo watermark
- * @param[in]  *handle points to a bmp384 handle structure
- * @param[out] *enable points to a bool buffer
+ * @param[in]  *handle pointer to a bmp384 handle structure
+ * @param[out] *enable pointer to a bool buffer
  * @return     status code
  *             - 0 success
  *             - 1 get interrupt fifo watermark failed
@@ -1026,8 +1026,8 @@ uint8_t bmp384_get_interrupt_fifo_watermark(bmp384_handle_t *handle, bmp384_bool
 
 /**
  * @brief     enable or disable the fifo full interrupt
- * @param[in] *handle points to a bmp384 handle structure
- * @param[in] enable is a bool value
+ * @param[in] *handle pointer to a bmp384 handle structure
+ * @param[in] enable bool value
  * @return    status code
  *            - 0 success
  *            - 1 set interrupt fifo full failed
@@ -1039,8 +1039,8 @@ uint8_t bmp384_set_interrupt_fifo_full(bmp384_handle_t *handle, bmp384_bool_t en
 
 /**
  * @brief      get the interrupt fifo full
- * @param[in]  *handle points to a bmp384 handle structure
- * @param[out] *enable points to a bool buffer
+ * @param[in]  *handle pointer to a bmp384 handle structure
+ * @param[out] *enable pointer to a bool buffer
  * @return     status code
  *             - 0 success
  *             - 1 get interrupt fifo full failed
@@ -1052,8 +1052,8 @@ uint8_t bmp384_get_interrupt_fifo_full(bmp384_handle_t *handle, bmp384_bool_t *e
 
 /**
  * @brief     enable or disable the data ready interrupt
- * @param[in] *handle points to a bmp384 handle structure
- * @param[in] enable is a bool value
+ * @param[in] *handle pointer to a bmp384 handle structure
+ * @param[in] enable bool value
  * @return    status code
  *            - 0 success
  *            - 1 set interrupt data ready failed
@@ -1065,8 +1065,8 @@ uint8_t bmp384_set_interrupt_data_ready(bmp384_handle_t *handle, bmp384_bool_t e
 
 /**
  * @brief      get the interrupt data ready status
- * @param[in]  *handle points to a bmp384 handle structure
- * @param[out] *enable points to a bool buffer
+ * @param[in]  *handle pointer to a bmp384 handle structure
+ * @param[out] *enable pointer to a bool buffer
  * @return     status code
  *             - 0 success
  *             - 1 get interrupt data ready failed
@@ -1089,8 +1089,8 @@ uint8_t bmp384_get_interrupt_data_ready(bmp384_handle_t *handle, bmp384_bool_t *
 
 /**
  * @brief      get the fifo length
- * @param[in]  *handle points to a bmp384 handle structure
- * @param[out] *length points to a fifo length buffer
+ * @param[in]  *handle pointer to a bmp384 handle structure
+ * @param[out] *length pointer to a fifo length buffer
  * @return     status code
  *             - 0 success
  *             - 1 get fifo length failed
@@ -1102,9 +1102,9 @@ uint8_t bmp384_get_fifo_length(bmp384_handle_t *handle, uint16_t *length);
 
 /**
  * @brief      get the fifo data
- * @param[in]  *handle points to a bmp384 handle structure
- * @param[out] *data points to a data buffer
- * @param[in]  length is the data buffer length
+ * @param[in]  *handle pointer to a bmp384 handle structure
+ * @param[out] *data pointer to a data buffer
+ * @param[in]  length data buffer length
  * @return     status code
  *             - 0 success
  *             - 1 get fifo data failed
@@ -1116,8 +1116,8 @@ uint8_t bmp384_get_fifo_data(bmp384_handle_t *handle, uint8_t *data, uint16_t le
 
 /**
  * @brief     set the fifo watermark
- * @param[in] *handle points to a bmp384 handle structure
- * @param[in] watermark is the fifo watermark
+ * @param[in] *handle pointer to a bmp384 handle structure
+ * @param[in] watermark fifo watermark
  * @return    status code
  *            - 0 success
  *            - 1 set fifo watermark failed
@@ -1129,8 +1129,8 @@ uint8_t bmp384_set_fifo_watermark(bmp384_handle_t *handle, uint16_t watermark);
 
 /**
  * @brief      get the fifo watermark
- * @param[in]  *handle points to a bmp384 handle structure
- * @param[out] *watermark points to a fifo watermark buffer
+ * @param[in]  *handle pointer to a bmp384 handle structure
+ * @param[out] *watermark pointer to a fifo watermark buffer
  * @return     status code
  *             - 0 success
  *             - 1 get fifo watermark failed
@@ -1142,8 +1142,8 @@ uint8_t bmp384_get_fifo_watermark(bmp384_handle_t *handle, uint16_t *watermark);
 
 /**
  * @brief     enable or disable the fifo
- * @param[in] *handle points to a bmp384 handle structure
- * @param[in] enable is a bool value
+ * @param[in] *handle pointer to a bmp384 handle structure
+ * @param[in] enable bool value
  * @return    status code
  *            - 0 success
  *            - 1 set fifo failed
@@ -1155,8 +1155,8 @@ uint8_t bmp384_set_fifo(bmp384_handle_t *handle, bmp384_bool_t enable);
 
 /**
  * @brief      get the fifo status
- * @param[in]  *handle points to a bmp384 handle structure
- * @param[out] *enable points to a bool buffer
+ * @param[in]  *handle pointer to a bmp384 handle structure
+ * @param[out] *enable pointer to a bool buffer
  * @return     status code
  *             - 0 success
  *             - 1 get fifo failed
@@ -1168,8 +1168,8 @@ uint8_t bmp384_get_fifo(bmp384_handle_t *handle, bmp384_bool_t *enable);
 
 /**
  * @brief     enable or disable the fifo stopping on full
- * @param[in] *handle points to a bmp384 handle structure
- * @param[in] enable is a bool value
+ * @param[in] *handle pointer to a bmp384 handle structure
+ * @param[in] enable bool value
  * @return    status code
  *            - 0 success
  *            - 1 set fifo stop on full failed
@@ -1181,8 +1181,8 @@ uint8_t bmp384_set_fifo_stop_on_full(bmp384_handle_t *handle, bmp384_bool_t enab
 
 /**
  * @brief      get the fifo stopping on full status
- * @param[in]  *handle points to a bmp384 handle structure
- * @param[out] *enable points to a bool buffer
+ * @param[in]  *handle pointer to a bmp384 handle structure
+ * @param[out] *enable pointer to a bool buffer
  * @return     status code
  *             - 0 success
  *             - 1 get fifo stop on full failed
@@ -1194,8 +1194,8 @@ uint8_t bmp384_get_fifo_stop_on_full(bmp384_handle_t *handle, bmp384_bool_t *ena
 
 /**
  * @brief     enable or disable the fifo sensor time on
- * @param[in] *handle points to a bmp384 handle structure
- * @param[in] enable is a bool value
+ * @param[in] *handle pointer to a bmp384 handle structure
+ * @param[in] enable bool value
  * @return    status code
  *            - 0 success
  *            - 1 set fifo sensor time on failed
@@ -1207,8 +1207,8 @@ uint8_t bmp384_set_fifo_sensortime_on(bmp384_handle_t *handle, bmp384_bool_t ena
 
 /**
  * @brief      get the fifo sensor time on status
- * @param[in]  *handle points to a bmp384 handle structure
- * @param[out] *enable points to a bool buffer
+ * @param[in]  *handle pointer to a bmp384 handle structure
+ * @param[out] *enable pointer to a bool buffer
  * @return     status code
  *             - 0 success
  *             - 1 get fifo sensor time on failed
@@ -1220,8 +1220,8 @@ uint8_t bmp384_get_fifo_sensortime_on(bmp384_handle_t *handle, bmp384_bool_t *en
 
 /**
  * @brief     enable or disable the fifo pressure on
- * @param[in] *handle points to a bmp384 handle structure
- * @param[in] enable is a bool value
+ * @param[in] *handle pointer to a bmp384 handle structure
+ * @param[in] enable bool value
  * @return    status code
  *            - 0 success
  *            - 1 set fifo pressure on failed
@@ -1233,8 +1233,8 @@ uint8_t bmp384_set_fifo_pressure_on(bmp384_handle_t *handle, bmp384_bool_t enabl
 
 /**
  * @brief      get the fifo pressure on status
- * @param[in]  *handle points to a bmp384 handle structure
- * @param[out] *enable points to a bool buffer
+ * @param[in]  *handle pointer to a bmp384 handle structure
+ * @param[out] *enable pointer to a bool buffer
  * @return     status code
  *             - 0 success
  *             - 1 get fifo pressure on failed
@@ -1246,8 +1246,8 @@ uint8_t bmp384_get_fifo_pressure_on(bmp384_handle_t *handle, bmp384_bool_t *enab
 
 /**
  * @brief     enable or disable the fifo temperature on
- * @param[in] *handle points to a bmp384 handle structure
- * @param[in] enable is a bool value
+ * @param[in] *handle pointer to a bmp384 handle structure
+ * @param[in] enable bool value
  * @return    status code
  *            - 0 success
  *            - 1 set fifo temperature on failed
@@ -1259,8 +1259,8 @@ uint8_t bmp384_set_fifo_temperature_on(bmp384_handle_t *handle, bmp384_bool_t en
 
 /**
  * @brief      get the fifo temperature on status
- * @param[in]  *handle points to a bmp384 handle structure
- * @param[out] *enable points to a bool buffer
+ * @param[in]  *handle pointer to a bmp384 handle structure
+ * @param[out] *enable pointer to a bool buffer
  * @return     status code
  *             - 0 success
  *             - 1 get fifo temperature on failed
@@ -1272,8 +1272,8 @@ uint8_t bmp384_get_fifo_temperature_on(bmp384_handle_t *handle, bmp384_bool_t *e
 
 /**
  * @brief     set the fifo subsampling
- * @param[in] *handle points to a bmp384 handle structure
- * @param[in] subsample is the fifo subsample
+ * @param[in] *handle pointer to a bmp384 handle structure
+ * @param[in] subsample fifo subsample
  * @return    status code
  *            - 0 success
  *            - 1 set fifo subsampling failed
@@ -1285,8 +1285,8 @@ uint8_t bmp384_set_fifo_subsampling(bmp384_handle_t *handle, uint8_t subsample);
 
 /**
  * @brief      get the fifo subsampling
- * @param[in]  *handle points to a bmp384 handle structure
- * @param[out] *subsample points to subsample buffer
+ * @param[in]  *handle pointer to a bmp384 handle structure
+ * @param[out] *subsample pointer to subsample buffer
  * @return     status code
  *             - 0 success
  *             - 1 get fifo subsampling failed
@@ -1298,8 +1298,8 @@ uint8_t bmp384_get_fifo_subsampling(bmp384_handle_t *handle, uint8_t *subsample)
 
 /**
  * @brief     set the fifo data source
- * @param[in] *handle points to a bmp384 handle structure
- * @param[in] source is the fifo data source
+ * @param[in] *handle pointer to a bmp384 handle structure
+ * @param[in] source fifo data source
  * @return    status code
  *            - 0 success
  *            - 1 set fifo data source failed
@@ -1311,8 +1311,8 @@ uint8_t bmp384_set_fifo_data_source(bmp384_handle_t *handle, bmp384_fifo_data_so
 
 /**
  * @brief      get the fifo data source
- * @param[in]  *handle points to a bmp384 handle structure
- * @param[out] *source points to fifo data source buffer
+ * @param[in]  *handle pointer to a bmp384 handle structure
+ * @param[out] *source pointer to fifo data source buffer
  * @return     status code
  *             - 0 success
  *             - 1 get fifo data source failed
@@ -1324,7 +1324,7 @@ uint8_t bmp384_get_fifo_data_source(bmp384_handle_t *handle, bmp384_fifo_data_so
 
 /**
  * @brief     flush the fifo
- * @param[in] *handle points to a bmp384 handle structure
+ * @param[in] *handle pointer to a bmp384 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 flush fifo failed
@@ -1336,9 +1336,9 @@ uint8_t bmp384_flush_fifo(bmp384_handle_t *handle);
 
 /**
  * @brief         read the fifo
- * @param[in]     *handle points to a bmp384 handle structure
- * @param[in]     *buf points to a data buffer
- * @param[in,out] *len points to a data length buffer
+ * @param[in]     *handle pointer to a bmp384 handle structure
+ * @param[in]     *buf pointer to a data buffer
+ * @param[in,out] *len pointer to a data length buffer
  * @return        status code
  *                - 0 success
  *                - 1 read fifo failed
@@ -1350,11 +1350,11 @@ uint8_t bmp384_read_fifo(bmp384_handle_t *handle, uint8_t *buf, uint16_t *len);
 
 /**
  * @brief         parse the fifo data
- * @param[in]     *handle points to a bmp384 handle structure
- * @param[in]     *buf is the fifo data
- * @param[in]     buf_len is the fifo data length
- * @param[out]    *frame points to a frame buffer
- * @param[in,out] *frame_len points to a frame length buffer
+ * @param[in]     *handle pointer to a bmp384 handle structure
+ * @param[in]     *buf pointer to fifo data
+ * @param[in]     buf_len fifo data length
+ * @param[out]    *frame pointer to a frame buffer
+ * @param[in,out] *frame_len pointer to a frame length buffer
  * @return        status code
  *                - 0 success
  *                - 1 fifo parse failed
@@ -1377,9 +1377,9 @@ uint8_t bmp384_fifo_parse(bmp384_handle_t *handle, uint8_t *buf, uint16_t buf_le
 
 /**
  * @brief     set the chip register
- * @param[in] *handle points to a bmp384 handle structure
- * @param[in] reg is the iic register address
- * @param[in] value is the data write to the register
+ * @param[in] *handle pointer to a bmp384 handle structure
+ * @param[in] reg iic register address
+ * @param[in] value data written to the register
  * @return    status code
  *            - 0 success
  *            - 1 write failed
@@ -1391,9 +1391,9 @@ uint8_t bmp384_set_reg(bmp384_handle_t *handle, uint8_t reg, uint8_t value);
 
 /**
  * @brief      get the chip register
- * @param[in]  *handle points to a bmp384 handle structure
- * @param[in]  reg is the iic register address
- * @param[out] *value points to a read data buffer
+ * @param[in]  *handle pointer to a bmp384 handle structure
+ * @param[in]  reg iic register address
+ * @param[out] *value pointer to a read data buffer
  * @return     status code
  *             - 0 success
  *             - 1 read failed
