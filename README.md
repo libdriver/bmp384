@@ -10,7 +10,7 @@
 
 BMP384 has a gel-filled cavity that allows higher robustness against water, liquids and other chemicals if the applicable integration concept is used. The BMP384 is perfectly suitable for applications of water-level and clog detection. It is compatible for use with other Bosch Sensortec sensors, including the BMI088 for better performance, robustness and stability. The BMP384 with its small footprint offers outstanding design flexibility, providing a single package solution that is easy to integrate into other existing and upcoming devices for smart homes, industrial products and wearables.
 
-LibDriver BMP384 is a full-featured driver of BMP384 launched by LibDriver.It provides continuous reading of pressure and temperature, single reading of pressure and temperature, interrupt reading, FIFO acquisition and other functions. LibDriver is MISRA compliant.
+LibDriver BMP384 is a full-featured driver for BMP384, launched by LibDriver.It provides continuous reading, single reading, interrupt reading, FIFO acquisition and additional features. LibDriver is MISRA compliant.
 
 ### Table of Contents
 
