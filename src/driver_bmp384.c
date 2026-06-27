@@ -3292,7 +3292,7 @@ uint8_t bmp384_read_pressure(bmp384_handle_t *handle, uint32_t *raw, float *pa)
                         
                         continue;                                                             /* continue */
                     }
-                    handle->debug_print("bmp384: temperature data is not ready.\n");          /* temperature data is not ready */
+                    handle->debug_print("bmp384: pressure data is not ready.\n");             /* pressure data is not ready */
                    
                     return 1;                                                                 /* return error */
                 }
@@ -3509,7 +3509,7 @@ uint8_t bmp384_read_temperature_pressure(bmp384_handle_t *handle, uint32_t *temp
                     
                     continue;                                                                 /* continue */
                 }
-                handle->debug_print("bmp384: temperature data is not ready.\n");              /* temperature data is not ready */
+                handle->debug_print("bmp384: pressure data is not ready.\n");                 /* pressure data is not ready */
                
                 return 1;                                                                     /* return error */
             }
